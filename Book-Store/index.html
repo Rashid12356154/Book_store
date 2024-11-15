@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="bg-slate-100">
+    <header>
+        <div class="bg-white p-4 shadow-sm flex flex-col gap-4 md:flex-row md:justify-between md:w-full md:px-20">
+            <div class="m-auto md:self-start px-20">
+                <h1 class="text-2xl text-slate-400 font-medium border-b-2 border-b-red-500 py-2">Book Store</h1>
+            </div>
+            <nav class=" flex flex-row-reverse md:flex-row md:flex-1 md:w-[70%]">
+               
+                <label for="check" class="md:hidden p-2 flex justify-center items-center z-10" id="btn">
+                    <span class="w-8 h-1 block bg-red-500 relative before:absolute before:w-full before:h-full before:block before:top-3 before:content-normal before:bg-red-500  after:absolute after:w-full after:h-full after:block after:top-6 after:content-normal after:bg-red-500"></span>
+                </label>
+                <ul id="nav" class="hidden absolute right-0 top-16 bg-white text-center shadow-sm w-full h-screen p-4  flex-col space-y-10 md:flex md:relative md:h-auto md:flex-row md:p-0 md:top-0 md:bg-none md:shadow-none md:items-center md:w-[80%] md:translate-x-0 md:space-x-6 md:space-y-0">
+                    <li class="my-5"><a href="#" class="text-slate-600 font-medium text-lg text-center hover:border-b-red-500 hover:border-b-2 hover:text-red-600 py-2">Home</a></li>
+                    <li class="my-5"><a href="#" class="text-slate-600 font-medium text-lg text-center hover:border-b-red-500 hover:border-b-2 hover:text-red-600 py-2">Product</a></li>
+                    <li class="my-5"><a href="#" class="text-slate-600 font-medium text-lg text-center hover:border-b-red-500 hover:border-b-2 hover:text-red-600 py-2">About Us</a></li>
+                    <li class="my-5"><a href="#" class="text-slate-600 font-medium text-lg text-center hover:border-b-red-500 hover:border-b-2 hover:text-red-600 py-2">Contact Us</a></li>
+                </ul>
+                <div class="flex w-full justify-between gap-8">
+                    <form action="#" class="shadow-md rounded-md flex w-full justify-between px-4 py-2">
+                        <input type="text" placeholder="Search Item" class="w-full outline-none">
+                        <button class="w-7 cursor-pointer hover:shadow-sm">
+                            <img src="./img/search_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                        </button>
+                    </form>
+                    <div id="cart" class="w-10 flex flex-col cursor-pointer">
+                         <div class="self-end w-7 h-7 rounded-full bg-red-500 text-center grid place-items-center"><span class="font-medium text-white" id="count">0</span></div>
+                         <img src="./img/shopping_bag_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                    </div>
+                    <div class="bg-stone-100 hidden absolute w-full h-screen top-36 right-0 p-6 shadow-md md:w-[40%]" id="shopping-cart">
+                        <div class="flex justify-center px-9">
+                            <h1 class="text-2xl text-slate-600 font-medium">Shopping Cart</h1>
+                           
+                        </div>
+                        <div id="items" class="grid gap-4 my-4">
+                           
+                        </div>
+
+                        <div class="my-6 flex justify-between px-6">
+                            <h1 class="text-xl text-slate-700 font-medium">Total Amount</h1>
+                            <h1 class="text-lg text-slate-700 font-medium">$<span id="total">0</span></h1>
+                        </div>
+                        <button class="bg-red-500 py-2 px-6 text-xl font-medium text-white shadow-md rounded-md m-auto text-center flex justify-center hover:bg-red-400" onclick="checkout()">Check Out</button>
+                    </div>
+                </div>
+            </nav>
+            
+        </div>
+        <div class="p-4 flex flex-col gap-4 md:flex-row-reverse md:items-center md:justify-center md:gap-10">
+            <div class="w-full md:w-[50%]">
+                <img src="./img/hero-image.png" alt="">
+            </div>
+            <div class="grid justify-center gap-4 text-center md:gap-6 md:self-start md:justify-start md:py-32">
+                <h1 class="text-3xl font-medium text-slate-700">Grab Our Latest Offers Now!</h1>
+                <h2 class="text-xl font-medium text-slate-700">Buy One Book, Get Two More Free</h2>
+                <p class="text-lg text-slate-700">This offer is available for 1 week. </p>
+                <a href="#" class="bg-red-500 w-[60%] m-auto py-4 text-white font-medium rounded-md shadow-md hover:bg-red-400">Shop Now</a>
+            </div>
+        </div>
+    </header>
+    <div class="my-4">
+        <h1 class="m-auto text-center text-3xl font-medium text-slate-700 border-b-2 border-b-red-500 w-44 py-2">Our Product</h1>
+        <div id="grid" class="grid grid-cols-1 gap-4 p-4 w-[95%] m-auto md:grid-cols-4">
+        </div>
+    </div>
+
+    <div class="my-6 flex flex-col gap-4 p-4 items-center md:flex-row md:w-[85%] md:m-auto">
+        <div class="w-[100%]">
+            <img src="./img/deal-img.jpg" alt="" class="w-full">
+        </div>
+        <div class="grid gap-4 text-center p-4 md:w-[70%]">
+            <h1 class="m-auto text-center text-3xl font-medium text-slate-700 border-b-2 border-b-red-500 w-40 py-2">About Us</h1>
+            <p  class="text-lg text-slate-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ratione exercitationem fugiat vero repellendus, quidem harum nulla dolores quod unde voluptate, enim saepe est iure aperiam tenetur molestiae, sint accusamus.</p>
+            <a href="#" class="bg-red-500 w-[45%] m-auto cursor-pointer hover:bg-red-400 py-4 rounded-md shadow-md text-white font-medium uppercase" style="letter-spacing: 3px;">Explore More</a>
+        </div>
+    </div>
+
+    <div class="my-6 flex flex-col gap-4 items-center p-4 md:flex-row-reverse md:w-[90%] md:m-auto md:my-20">
+        <div class=" w-[70%] md:w-[100%]">
+            <img src="./img/worldmap.png" alt="" class="w-full">
+        </div>
+        <div class=" grid  gap-4 place-content-center md:w-[60%] md:place-content-start">
+            <h1 class="m-auto text-center text-3xl font-medium text-slate-700 border-b-2 border-b-red-500 w-40 py-2">Contact Us</h1>
+            <p  class="text-lg text-slate-400 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ratione exercitationem fugiat vero repellendus, quidem harum nulla dolores quod unde voluptate, enim saepe est iure aperiam tenetur molestiae, sint accusamus.</p>
+            <div class="flex gap-4 justify-center">
+                <img src="./img/icons8-facebook-30.png" alt="" class="w-10 h-10">
+                <img src="./img/icons8-instagram-30.png" alt="" class="w-10 h-10">
+                <img src="./img/icons8-twitterx-30.png" alt="" class="w-10 h-10">
+                <img src="./img/icons8-youtube-50.png" alt="" class="w-10 h-10">
+            </div>
+            <div class="flex gap-2 justify-center">
+                <img src="./img/call_24dp_F74545_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                <span class="text-slate-700 font-medium">+92411789456</span>
+            </div>
+            <div class="flex flex-col px-6 gap-4 items-center">
+                <input type="text" placeholder="Send Massage" class="h-10 px-4 rounded-md shadow-sm w-full">
+                <button class="bg-red-500 py-4 w-[45%] text-lg font-medium text-white rounded-md shadow-sm cursor-pointer hover:bg-red-400">Send</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="bg-white p-4 grid gap-4 place-content-center text-center shadow-md md:grid-cols-3 md:py-10">
+        <h2 class="text-slate-600 font-medium text-2xl">&copy; CopyRight 2024</h2>
+        <h1 class="text-slate-700 font-semibold text-2xl">Developed By Rashid Ali</h1>
+        <a href="#" class="text-red-500 text-xl decoration-slice">See my challenges</a>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>

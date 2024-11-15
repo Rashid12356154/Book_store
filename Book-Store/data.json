@@ -1,0 +1,58 @@
+[
+    {
+        "id":1,
+        "img":"./img/book-1.png",
+        "title":"The Art City",
+        "author":"John Doey",
+        "price":10
+    },
+    {
+        "id":2,
+        "img":"./img/book-2.png",
+        "title":"Thanks in EveryThing",
+        "author":"John Doey",
+        "price":15 
+    },
+    {
+        "id":3,
+        "img":"./img/book-3.png",
+        "title":"Your Name",
+        "author":"John Doey",
+        "price":5.6
+    },
+    {
+        "id":4,
+        "img":"./img/book-4.png",
+        "title":"be greateful and give thanks",
+        "author":"John Doey",
+        "price":10
+    },
+    {
+        "id":5,
+        "img":"./img/book-5.png",
+        "title":"Music Rook",
+        "author":"John Doey",
+        "price":11.56
+    },
+    {
+        "id":6,
+        "img":"./img/book-6.png",
+        "title":"Featured Book",
+        "author":"John Doey",
+        "price":10
+    },
+    {
+        "id":7,
+        "img":"./img/book-7.png",
+        "title":"Featured Book",
+        "author":"John Doey",
+        "price":7
+    },
+    {
+        "id":8,
+        "img":"./img/book-8.png",
+        "title":"Story Book",
+        "author":"John Doey",
+        "price":10
+    }
+]
